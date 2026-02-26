@@ -1,4 +1,4 @@
-import { useState } from "react";
+import LikeButton from "./like-button";
 
 function Header({ title, description }) {
   if (title && description) {
@@ -49,12 +49,6 @@ function Link() {
 }
 
 export default function Homepage() {
-  const [likes, setLikes] = React.useState(0);
-
-  function handleClick() {
-    setLikes(likes + 2);
-  }
-
   const array = ["Radiyah", "Shahidul", "Oishi"];
   return (
     <div>
@@ -65,7 +59,7 @@ export default function Homepage() {
           <li key={i}> {name} </li>
         ))}
       </ul>
-      <button onClick={handleClick}> Likes({likes}) </button>
+      <LikeButton />
       <Article />
       <Footer />
     </div>
